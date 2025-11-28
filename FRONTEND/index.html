@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HackMate - Find Your Perfect Team</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <h1><img src="Logo maker project.png" alt=""></h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#" class="nav-link" data-view="home">Home</a></li>
+                <li><a href="#" class="nav-link" data-view="browse">Browse Teams</a></li>
+                <li><a href="#" class="nav-link" data-view="create">Create Team</a></li>
+                <li><a href="#" class="nav-link" data-view="profile">My Profile</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Home/Landing View -->
+    <div id="home-view" class="view active">
+        <div class="hero-section">
+            <div class="hero-content">
+                <h1 class="hero-title">Find Your Perfect Team</h1>
+                <p class="hero-subtitle">Connect with talented developers, designers, and innovators for your next hackathon or project</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="showView('create')">Create a Team</button>
+                    <button class="btn btn-secondary" onclick="showView('browse')">Browse Teams</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="features-section">
+            <div class="container">
+                <h2 class="section-title">Why Choose HackMate?</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">👥</div>
+                        <h3>Smart Matching</h3>
+                        <p>Find teammates based on skills, interests, and project requirements</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🎯</div>
+                        <h3>Skill-Based Search</h3>
+                        <p>Filter teams by technologies, experience level, and expertise</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h3>Quick Setup</h3>
+                        <p>Create or join teams in minutes and start collaborating</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Browse Teams View -->
+    <div id="browse-view" class="view">
+        <div class="container">
+            <h1 class="page-title">Browse Teams</h1>
+            
+            <div class="search-filters">
+                <input type="text" id="search-input" class="search-input" placeholder="Search teams by name, technology, or skill...">
+                <div class="filter-group">
+                    <select id="skill-filter" class="filter-select">
+                        <option value="">All Skills</option>
+                        <option value="javascript">JavaScript</option>
+                        <option value="python">Python</option>
+                        <option value="react">React</option>
+                        <option value="nodejs">Node.js</option>
+                        <option value="design">UI/UX Design</option>
+                        <option value="ml">Machine Learning</option>
+                        <option value="blockchain">Blockchain</option>
+                    </select>
+                    <select id="type-filter" class="filter-select">
+                        <option value="">All Types</option>
+                        <option value="hackathon">Hackathon</option>
+                        <option value="project">Project</option>
+                        <option value="startup">Startup</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="teams-container" class="teams-grid">
+                <!-- Teams will be dynamically inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Create Team View -->
+    <div id="create-view" class="view">
+        <div class="container">
+            <h1 class="page-title">Create a New Team</h1>
+            
+            <form id="create-team-form" class="team-form">
+                <div class="form-group">
+                    <label for="team-name">Team Name *</label>
+                    <input type="text" id="team-name" class="form-input" required placeholder="e.g., AI Innovation Squad">
+                </div>
+
+                <div class="form-group">
+                    <label for="team-description">Description *</label>
+                    <textarea id="team-description" class="form-textarea" rows="4" required placeholder="Describe your project or hackathon idea..."></textarea>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="team-type">Type *</label>
+                        <select id="team-type" class="form-select" required>
+                            <option value="">Select type...</option>
+                            <option value="hackathon">Hackathon</option>
+                            <option value="project">Project</option>
+                            <option value="startup">Startup</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="team-size">Team Size *</label>
+                        <input type="number" id="team-size" class="form-input" min="2" max="10" required placeholder="e.g., 4">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="required-skills">Required Skills *</label>
+                    <div class="skills-input-container">
+                        <input type="text" id="skill-input" class="form-input" placeholder="Type a skill and press Enter">
+                        <div id="skills-tags" class="skills-tags"></div>
+                    </div>
+                    <small class="form-hint">Press Enter to add each skill</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="team-interests">Interests/Tags</label>
+                    <div class="skills-input-container">
+                        <input type="text" id="interest-input" class="form-input" placeholder="Type an interest and press Enter">
+                        <div id="interests-tags" class="skills-tags"></div>
+                    </div>
+                    <small class="form-hint">Press Enter to add each interest</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="contact-info">Contact Information</label>
+                    <input type="text" id="contact-info" class="form-input" placeholder="Email, Discord, or other contact method">
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-large">Create Team</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Profile View -->
+    <div id="profile-view" class="view">
+        <div class="container">
+            <h1 class="page-title">My Profile</h1>
+            
+            <div class="profile-content">
+                <div class="profile-section">
+                    <h2>Personal Information</h2>
+                    <form id="profile-form" class="team-form">
+                        <div class="form-group">
+                            <label for="profile-name">Name *</label>
+                            <input type="text" id="profile-name" class="form-input" required placeholder="Your name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="profile-bio">Bio</label>
+                            <textarea id="profile-bio" class="form-textarea" rows="3" placeholder="Tell us about yourself..."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="profile-skills">My Skills *</label>
+                            <div class="skills-input-container">
+                                <input type="text" id="profile-skill-input" class="form-input" placeholder="Type a skill and press Enter">
+                                <div id="profile-skills-tags" class="skills-tags"></div>
+                            </div>
+                            <small class="form-hint">Press Enter to add each skill</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="profile-interests">My Interests</label>
+                            <div class="skills-input-container">
+                                <input type="text" id="profile-interest-input" class="form-input" placeholder="Type an interest and press Enter">
+                                <div id="profile-interests-tags" class="skills-tags"></div>
+                            </div>
+                            <small class="form-hint">Press Enter to add each interest</small>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Save Profile</button>
+                    </form>
+                </div>
+
+                <div class="profile-section">
+                    <h2>My Teams</h2>
+                    <div id="my-teams-container" class="teams-grid">
+                        <!-- User's teams will be displayed here -->
+                    </div>
+                </div>
+
+                <div class="profile-section">
+                    <h2>Team Recommendations</h2>
+                    <p class="section-description">Teams that match your skills and interests</p>
+                    <div id="recommendations-container" class="teams-grid">
+                        <!-- Recommendations will be displayed here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Team Details -->
+    <div id="team-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
