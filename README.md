@@ -1,1 +1,1 @@
-# Slack
+# HackMate
