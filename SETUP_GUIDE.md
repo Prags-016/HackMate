@@ -144,11 +144,11 @@ Once you have the minimum required keys (MongoDB, Clerk, Stream), you can run:
 
 ```bash
 # Terminal 1 - Backend
-cd slack-clone\backend
+cd HackMate\backend
 npm run dev
 
 # Terminal 2 - Frontend  
-cd slack-clone\frontend
+cd HackMate\frontend
 npm run dev
 ```
 
@@ -181,4 +181,5 @@ The app will be available at:
 - MongoDB collections are created automatically on first use
 - No manual database migrations needed
 - User model will be created when first user signs up (if Inngest is configured)
+
 
