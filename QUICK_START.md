@@ -18,7 +18,7 @@
 4. Click "Connect" → "Connect your application"
 5. Copy connection string
 6. Replace `<password>` with your password
-7. **Paste into:** `slack-clone/backend/.env` → Replace `MONGO_URI=your_mongo_uri_here`
+7. **Paste into:** `HackMate/backend/.env` → Replace `MONGO_URI=your_mongo_uri_here`
 
 ### Step 2: Clerk (3 minutes)
 1. Go to: https://clerk.com
@@ -27,8 +27,8 @@
 4. Go to "API Keys"
 5. Copy **Publishable Key** and **Secret Key**
 6. **Update files:**
-   - `slack-clone/backend/.env`: Replace both `CLERK_PUBLISHABLE_KEY` and `CLERK_SECRET_KEY`
-   - `slack-clone/frontend/.env`: Replace `VITE_CLERK_PUBLISHABLE_KEY`
+   - `HackMate/backend/.env`: Replace both `CLERK_PUBLISHABLE_KEY` and `CLERK_SECRET_KEY`
+   - `HackMate/frontend/.env`: Replace `VITE_CLERK_PUBLISHABLE_KEY`
 
 ### Step 3: Stream (3 minutes)
 1. Go to: https://getstream.io
@@ -37,8 +37,8 @@
 4. Go to "Chat" → "API Keys"
 5. Copy **API Key** and **API Secret**
 6. **Update files:**
-   - `slack-clone/backend/.env`: Replace `STREAM_API_KEY` and `STREAM_API_SECRET`
-   - `slack-clone/frontend/.env`: Replace `VITE_STREAM_API_KEY`
+   - `HackMate/backend/.env`: Replace `STREAM_API_KEY` and `STREAM_API_SECRET`
+   - `HackMate/frontend/.env`: Replace `VITE_STREAM_API_KEY`
 
 ---
 
@@ -48,13 +48,13 @@ After you have all 3 API keys set up:
 
 **Terminal 1 - Backend:**
 ```powershell
-cd slack-clone\backend
+cd HackMate\backend
 npm run dev
 ```
 
 **Terminal 2 - Frontend:**
 ```powershell
-cd slack-clone\frontend
+cd HackMate\frontend
 npm run dev
 ```
 
@@ -77,4 +77,5 @@ If you try to run without API keys:
 1. Open `SETUP_GUIDE.md` for detailed instructions
 2. Open `REQUIREMENTS.md` for complete checklist
 3. All services have free tiers - no credit card needed!
+
 
